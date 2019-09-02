@@ -1,0 +1,10 @@
+Package: com.JoshTV.ZeldaTV
+Name: ZeldaTV
+Depends: mobilesubstrate, preferenceloader
+Version: 1.0
+Architecture: appletvos-arm64
+Description: Listen to the sounds of the Ocarina of Time as you brows, venture and explore your jailbroken Apple TV!
+Depiction: http://joshtv.net/json/ZeldaTV.json
+Maintainer: Diatrus
+Author: JoshTV
+Section: Tweaks
