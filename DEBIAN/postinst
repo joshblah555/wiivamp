@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo
+echo
+echo "Hey! Listen!"
+echo
+echo
+echo 'Installation complete!'
+echo
+echo
