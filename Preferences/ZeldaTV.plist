@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>entry</key>
+	<dict>
+		<key>cell</key>
+		<string>PSLinkCell</string>
+		<key>description</key>
+		<string>Enjoy the sounds of Zelda!</string>
+		<key>icon</key>
+		<string>ZeldaTV.png</string>
+		<key>label</key>
+		<string>ZeldaTV</string>
+	</dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.JoshTV.ZeldaTV</string>
+			<key>description</key>
+			<string>Explore Hyrule inside nitoTV!</string>
+			<key>key</key>
+			<string>nitoTVEnabled</string>
+			<key>label</key>
+			<string>nitoTV</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.JoshTV.ZeldaTV</string>
+			<key>description</key>
+			<string>Browse the Shop while you're in the App Store.</string>
+			<key>key</key>
+			<string>TVAppStoreEnabled</string>
+			<key>label</key>
+			<string>App Store</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.JoshTV.ZeldaTV</string>
+			<key>description</key>
+			<string>Go to the Shooting Gallery while browsing your Photos!</string>
+			<key>key</key>
+			<string>TVPhotosEnabled</string>
+			<key>label</key>
+			<string>Photos</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.JoshTV.ZeldaTV</string>
+			<key>description</key>
+			<string>Enter Goron City when browsing your homescreen!</string>
+			<key>key</key>
+			<string>PineBoardEnabled</string>
+			<key>label</key>
+			<string>Homescreen</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.JoshTV.ZeldaTV</string>
+			<key>description</key>
+			<string>Travel inside the Gerudo Valley as you search!</string>
+			<key>key</key>
+			<string>SearchEnabled</string>
+			<key>label</key>
+			<string>Search</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.JoshTV.ZeldaTV</string>
+			<key>description</key>
+			<string>Enter the Potion Shop whilst jailbreaking!</string>
+			<key>key</key>
+			<string>JailbreakEnabled</string>
+			<key>label</key>
+			<string>Chimera</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.JoshTV.ZeldaTV</string>
+			<key>description</key>
+			<string>Listen to Zelda's Lullaby in the screensaver!</string>
+			<key>key</key>
+			<string>ScreenSaverEnabled</string>
+			<key>label</key>
+			<string>Screen Saver</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.JoshTV.ZeldaTV</string>
+			<key>description</key>
+			<string>Visit Zora's Domain in the settings!</string>
+			<key>key</key>
+			<string>SettingsEnabled</string>
+			<key>label</key>
+			<string>Settings</string>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>relaunchBackboardd</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Apply Settings</string>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>ZeldaTV</string>
+</dict>
+</plist>
