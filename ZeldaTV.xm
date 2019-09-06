@@ -10,7 +10,11 @@ static BOOL SearchEnabled = (BOOL)[[WiivampTVPrefs objectForKey:@"SearchEnabled"
 static BOOL ScreenSaverEnabled = (BOOL)[[WiivampTVPrefs objectForKey:@"ScreenSaverEnabled"]?:@YES boolValue];
 static BOOL nitoTVEnabled = (BOOL)[[WiivampTVPrefs objectForKey:@"nitoTVEnabled"]?:@YES boolValue];
 static BOOL TVPhotosEnabled = (BOOL)[[WiivampTVPrefs objectForKey:@"TVPhotosEnabled"]?:@YES boolValue];
-static BOOL PineBoardEnabled = (BOOL)[[WiivampTVPrefs objectForKey:@"PineBoardEnabled"]?:@YES boolValue];
+static BOOL HeadBoardEnabled = (BOOL)[[WiivampTVPrefs objectForKey:@"HeadBoardEnabled"]?:@YES boolValue];
+static BOOL ReprovisionEnabled = (BOOL)[[WiivampTVPrefs objectForKey:@"ReprovisionEnabled"]?:@YES boolValue];
+static BOOL PongEnabled = (BOOL)[[WiivampTVPrefs objectForKey:@"PongEnabled"]?:@YES boolValue];
+
+BOOL hasPlayedReprovision = NO;
 BOOL hasPlayedScreenSaver = NO;
 BOOL hasPlayedJailbreak = NO;
 BOOL hasPlayedSettings = NO;
@@ -18,13 +22,16 @@ BOOL hasPlayedSearch = NO;
 BOOL hasPlayedAppStore = NO;
 BOOL hasPlayednitoTV = NO;
 BOOL hasPlayedPhotos = NO;
-BOOL hasPlayedPineBoard = NO;
+BOOL hasPlayedHeadBoard = NO;
+BOOL hasPlayedPong = NO;
+
 
 #ifdef DEBUG
     #define DEBUGLOG(...) NSLog(__VA_ARGS__);
 #else
     #define DEBUGLOG(...) {}
 #endif
+
 
 
 %hook UIViewController
@@ -38,10 +45,27 @@ BOOL hasPlayedPineBoard = NO;
         hasPlayedAppStore = YES;
     }
 
+    if([[[NSBundle mainBundle] bundleIdentifier] isEqualToString:@"ca.aerickson.TVPong"] && PongEnabled && !hasPlayedPong) {
+        [self playSong:@"pong" restartTime:CMTimeMake(7, 1)];
+        hasPlayedPong = YES;
+    }
+
     if([[[NSBundle mainBundle] bundleIdentifier] isEqualToString:@"com.electrateam.ChimeraTV"] && JailbreakEnabled && !hasPlayedJailbreak) {
         [self playSong:@"jailbreak" restartTime:CMTimeMake(7, 1)];
         hasPlayedJailbreak = YES;
     }
+
+    if([[[NSBundle mainBundle] bundleIdentifier] isEqualToString:@"com.nito.electraTV"] && JailbreakEnabled && !hasPlayedJailbreak) {
+        [self playSong:@"jailbreak" restartTime:CMTimeMake(7, 1)];
+        hasPlayedJailbreak = YES;
+    }
+
+
+    if([[[NSBundle mainBundle] bundleIdentifier] isEqualToString:@"com.matchstic.reprovision.tvos"] && ReprovisionEnabled && !hasPlayedReprovision) {
+        [self playSong:@"reprovision" restartTime:CMTimeMake(7, 1)];
+        hasPlayedReprovision = YES;
+    }
+
 
     if([[[NSBundle mainBundle] bundleIdentifier] isEqualToString:@"com.apple.TVSettings"] && SettingsEnabled && !hasPlayedSettings) {
         [self playSong:@"settings" restartTime:CMTimeMake(8, 1)];
@@ -70,9 +94,9 @@ BOOL hasPlayedPineBoard = NO;
         hasPlayedPhotos = YES;  
     }
 
-    if([[[NSBundle mainBundle] bundleIdentifier] isEqualToString:@"com.apple.HeadBoard"] && PineBoardEnabled && !hasPlayedPineBoard) {
+    if([[[NSBundle mainBundle] bundleIdentifier] isEqualToString:@"com.apple.HeadBoard"] && HeadBoardEnabled && !hasPlayedHeadBoard) {
         [self playSong:@"pineboard" restartTime:CMTimeMake(20, 1)];
-        hasPlayedPineBoard = YES;
+        hasPlayedHeadBoard = YES;
     }
 }
 %new
